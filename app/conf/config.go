@@ -1,3 +1,0 @@
-package conf
-
-func init() {}
