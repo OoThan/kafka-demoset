@@ -23,6 +23,6 @@ func (h *Handler) Register() {
 	h.R.Use(middlerware.Cors())
 
 	// home handler
-	homeHandler := &homeHandler{}
+	homeHandler := NewHomeHandler(h)
 	homeHandler.Register()
 }
