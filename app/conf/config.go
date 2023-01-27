@@ -1,9 +1,10 @@
 package conf
 
 import (
-	"gopkg.in/yaml.v2"
 	"kafka-demoset/app/internal/logger"
 	"os"
+
+	"gopkg.in/yaml.v2"
 )
 
 type (
