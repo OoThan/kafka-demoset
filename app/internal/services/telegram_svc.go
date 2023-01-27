@@ -9,16 +9,14 @@ import (
 	"net/http"
 )
 
-var TeleBot *TelegramBot
-
 type TelegramBot struct {
 	Token   string
 	GroupId string
 	URL     string
 }
 
-func NewTelegramBot(token, groupID string) {
-	TeleBot = &TelegramBot{
+func NewTelegramBot(token, groupID string) *TelegramBot {
+	return &TelegramBot{
 		Token:   token,
 		GroupId: groupID,
 		URL:     fmt.Sprintf("https://api.telegram.org/bot%s", token),

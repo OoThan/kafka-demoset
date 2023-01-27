@@ -2,7 +2,7 @@ package handler
 
 import (
 	"github.com/gin-gonic/gin"
-	"kafka-demoset/app/internal/middleware"
+	"kafka-demoset/app/internal/middlerware"
 )
 
 type Handler struct {
