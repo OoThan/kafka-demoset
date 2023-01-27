@@ -20,9 +20,10 @@ func NewHandler(c *HConfig) *Handler {
 }
 
 func (h *Handler) Register() {
-	h.R.Use(middleware.Cors())
+
+	h.R.Use(middlerware.Cors())
 
 	// home handler
-	homeHandler := &homeHandler{}
+	homeHandler := NewHomeHandler(h)
 	homeHandler.Register()
 }
