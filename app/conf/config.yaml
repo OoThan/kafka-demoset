@@ -1,0 +1,9 @@
+
+# kafka
+kafka:
+  addr: "127.0.0.1:9092"
+
+# telegram
+telegram:
+  tokenID:  "5938285326:AAFW0BKMs_LxCcPHwxgiV9YVhyC1iOUvcuY"
+  groupID:  "-800830079"
