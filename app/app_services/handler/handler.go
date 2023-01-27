@@ -2,7 +2,7 @@ package handler
 
 import (
 	"github.com/gin-gonic/gin"
-	"kafka-demoset/app/internal/middlerware"
+	"kafka-demoset/app/internal/middleware"
 )
 
 type Handler struct {
@@ -20,6 +20,7 @@ func NewHandler(c *HConfig) *Handler {
 }
 
 func (h *Handler) Register() {
+
 	h.R.Use(middlerware.Cors())
 
 	// home handler
