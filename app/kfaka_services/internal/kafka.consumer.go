@@ -10,7 +10,7 @@ import (
 )
 
 func NewKafkaEventConsumer() {
-	newKafkaConsumer(libkafka.Test_Kafka_Message_Topic, handleTestMessageKafkaEvent)
+	newKafkaConsumer(libkafka.TestKafkaMessageTopic, handleTestMessageKafkaEvent)
 }
 
 func newKafkaConsumer(topic string, handle func(message *kafka.Message) error) error {
@@ -42,7 +42,7 @@ func newKafkaConsumer(topic string, handle func(message *kafka.Message) error) e
 
 func handleTestMessageKafkaEvent(message *kafka.Message) error {
 	defer func() {}()
-	logger.Sugar.Debug(libkafka.Test_Kafka_Message_Topic)
+	logger.Sugar.Debug(libkafka.TestKafkaMessageTopic)
 
 	msg := &libkafka.TestKafkaMessageData{}
 	if err := json.Unmarshal(message.Value, msg); err != nil {
