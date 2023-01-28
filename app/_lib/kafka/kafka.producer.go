@@ -3,6 +3,7 @@ package kafka
 import (
 	"encoding/json"
 	"github.com/confluentinc/confluent-kafka-go/kafka"
+	"kafka-demoset/app/conf"
 	"kafka-demoset/app/internal/logger"
 )
 
@@ -16,7 +17,7 @@ func InitKafkaProducer() {
 
 func initKafkaProducer() {
 	configMap := &kafka.ConfigMap{
-		"bootstrap.servers":   "localhost:9092",
+		"bootstrap.servers":   conf.Kafka().Addr,
 		"delivery.timeout.ms": "1",
 		"acks":                "all",
 		"enable.idempotence":  "true",
