@@ -4,6 +4,7 @@ import (
 	"context"
 	"flag"
 	"github.com/gin-gonic/gin"
+	libkafka "kafka-demoset/app/_lib/kafka"
 	"kafka-demoset/app/app_services/handler"
 	_ "kafka-demoset/app/conf"
 	"kafka-demoset/app/internal/logger"
@@ -19,6 +20,8 @@ func main() {
 	flag.Parse()
 
 	addr := net.JoinHostPort("", *port)
+
+	libkafka.InitKafkaProducer()
 
 	gin.SetMode(gin.ReleaseMode)
 	router := gin.Default()
